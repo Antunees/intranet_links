@@ -22,6 +22,7 @@ class Children extends StatelessWidget {
             link: item['link'],
             name: item['name'],
             description: item['description'],
+            icon: item['icon'],
           );
 
           widgets.add(TypeCard(data: object));

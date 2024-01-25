@@ -18,8 +18,18 @@ class StartPage extends StatelessWidget {
           'type': 'card',
           'link': 'https://github.com/Antunees',
           'name': 'Github',
-          'description':
-              'Code repository Code repository Code repository Code repository Code repository Code repository Code repository Code repository Code repository Code repository Code repository Code repository Code repository Code repository Code repository Code repository Code repository ',
+          'description': 'Code repository',
+          'icon':
+              'https://lh3.googleusercontent.com/drive-viewer/AEYmBYTXgU6jbXaasGWWSsHHRxA4u02UKJewdBU61QdWjON3SF36xKJND68gzN_UIT-32BVnULHJAfL-9GxXI2qkz0pZUkHFLQ=s2560',
+          'children': [],
+        },
+        {
+          'type': 'card',
+          'link': 'https://www.linkedin.com/in/cau%C3%AA-antunes-31437510a/',
+          'name': 'Linkedin',
+          'description': 'Professional profile',
+          'icon':
+              'https://lh3.googleusercontent.com/drive-viewer/AEYmBYTf6lrYUWpjOYsAYzPSzDyqwHXLme6utcBqLXqVXvnEIBFOHXsTotugGXyvflJGuGYGlX0eR55lHdmL8NiQdMgHyOQ3bg=s2560',
           'children': [],
         },
       ]
