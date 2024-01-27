@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:intranet_links/pages/children.dart';
 
@@ -26,6 +27,27 @@ class StartPage extends StatelessWidget {
             'description': 'Professional profile',
             'icon':
                 'https://lh3.googleusercontent.com/drive-viewer/AEYmBYTf6lrYUWpjOYsAYzPSzDyqwHXLme6utcBqLXqVXvnEIBFOHXsTotugGXyvflJGuGYGlX0eR55lHdmL8NiQdMgHyOQ3bg=s2560',
+          },
+          {
+            'type': 'profile',
+            'name': 'Heathcliff Andrew Ledger',
+            'image':
+                'https://lh3.googleusercontent.com/drive-viewer/AEYmBYSR2gN2G5qOrD0swF36Ge_6nwXko2mqQKgQB2a_Y50pFdzNZqML_LtZtEsC2u1koT7PT4zbeTodBWeS2U2UXmXShdJv9A=s2560',
+            'description': 'software engineer',
+            // 'Hi, I\'m Heath, a software engineer specializing in artificial intelligence. Besides dedicating my time to developing advanced algorithms, I\'m a science fiction enthusiast. Pizza is my go-to comfort food, and I usually code to classical music, finding harmony in the notes conducive to solving complex problems.',
+            'links_as_icon': [
+              {
+                'icon':
+                    'https://lh3.googleusercontent.com/drive-viewer/AEYmBYTXgU6jbXaasGWWSsHHRxA4u02UKJewdBU61QdWjON3SF36xKJND68gzN_UIT-32BVnULHJAfL-9GxXI2qkz0pZUkHFLQ=s2560',
+                'link': 'https://github.com/Antunees',
+              },
+              {
+                'icon':
+                    'https://lh3.googleusercontent.com/drive-viewer/AEYmBYTf6lrYUWpjOYsAYzPSzDyqwHXLme6utcBqLXqVXvnEIBFOHXsTotugGXyvflJGuGYGlX0eR55lHdmL8NiQdMgHyOQ3bg=s2560',
+                'link':
+                    'https://www.linkedin.com/in/cau%C3%AA-antunes-31437510a/',
+              },
+            ],
           },
         ],
       },
@@ -131,15 +153,38 @@ class StartPage extends StatelessWidget {
             },
           ],
         },
+        {
+          'type': 'profile',
+          'name': 'Heathcliff Andrew Ledger',
+          'image':
+              'https://lh3.googleusercontent.com/drive-viewer/AEYmBYSR2gN2G5qOrD0swF36Ge_6nwXko2mqQKgQB2a_Y50pFdzNZqML_LtZtEsC2u1koT7PT4zbeTodBWeS2U2UXmXShdJv9A=s2560',
+          'description': 'software engineer',
+          'links_as_icon': [
+            {
+              'icon':
+                  'https://lh3.googleusercontent.com/drive-viewer/AEYmBYTXgU6jbXaasGWWSsHHRxA4u02UKJewdBU61QdWjON3SF36xKJND68gzN_UIT-32BVnULHJAfL-9GxXI2qkz0pZUkHFLQ=s2560',
+              'link': 'https://github.com/Antunees',
+            },
+            {
+              'icon':
+                  'https://lh3.googleusercontent.com/drive-viewer/AEYmBYTf6lrYUWpjOYsAYzPSzDyqwHXLme6utcBqLXqVXvnEIBFOHXsTotugGXyvflJGuGYGlX0eR55lHdmL8NiQdMgHyOQ3bg=s2560',
+              'link':
+                  'https://www.linkedin.com/in/cau%C3%AA-antunes-31437510a/',
+            },
+          ],
+        },
       ]
     };
     List<String> companiesIcons = data['companies'];
     List<Padding> companies = companiesIcons
         .map((companie) => Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Image.network(
-                companie,
+              child: CachedNetworkImage(
+                imageUrl: companie,
                 height: 250.0,
+                placeholder: (context, url) => const SizedBox(
+                    width: 250.0, child: CircularProgressIndicator()),
+                errorWidget: (context, url, error) => Container(),
               ),
             ))
         .toList();

@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:intranet_links/models/model_card.dart';
 import 'package:intranet_links/models/model_column.dart';
 import 'package:intranet_links/models/model_page.dart';
+import 'package:intranet_links/models/model_profile.dart';
 import 'package:intranet_links/models/model_section.dart';
 import 'package:intranet_links/types/type_card.dart';
 import 'package:intranet_links/types/type_column.dart';
 import 'package:intranet_links/types/type_page.dart';
+import 'package:intranet_links/types/type_profile.dart';
 import 'package:intranet_links/types/type_section.dart';
 
 class Children {
@@ -70,6 +72,24 @@ class Children {
           );
 
           widgets.add(TypePage(data: object));
+          break;
+
+        case "profile":
+          List<LinkAsIcon> linkAsIcon = item['links_as_icon']
+              .map<LinkAsIcon>((item) => LinkAsIcon(
+                    icon: item['icon'],
+                    link: item['link'],
+                  ))
+              .toList();
+          ModelProfile object = ModelProfile(
+            type: item['type'],
+            name: item['name'],
+            image: item['image'],
+            description: item['description'],
+            linksAsIcons: linkAsIcon,
+          );
+
+          widgets.add(TypeProfile(data: object));
           break;
 
         default:
