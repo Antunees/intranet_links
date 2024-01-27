@@ -2,7 +2,7 @@ class ModelSection {
   String type;
   String name;
   int columns;
-  List children;
+  List<Map<String, dynamic>>? children;
 
   ModelSection({
     required this.type,

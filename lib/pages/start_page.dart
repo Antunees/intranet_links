@@ -15,27 +15,79 @@ class StartPage extends StatelessWidget {
       ],
       'children': [
         {
-          'type': 'card',
-          'link': 'https://github.com/Antunees',
-          'name': 'Github',
-          'description': 'Code repository',
-          'icon':
-              'https://lh3.googleusercontent.com/drive-viewer/AEYmBYTXgU6jbXaasGWWSsHHRxA4u02UKJewdBU61QdWjON3SF36xKJND68gzN_UIT-32BVnULHJAfL-9GxXI2qkz0pZUkHFLQ=s2560',
-        },
-        {
-          'type': 'card',
-          'link': 'https://www.linkedin.com/in/cau%C3%AA-antunes-31437510a/',
-          'name': 'Linkedin',
-          'description': 'Professional profile',
-          'icon':
-              'https://lh3.googleusercontent.com/drive-viewer/AEYmBYTf6lrYUWpjOYsAYzPSzDyqwHXLme6utcBqLXqVXvnEIBFOHXsTotugGXyvflJGuGYGlX0eR55lHdmL8NiQdMgHyOQ3bg=s2560',
+          'type': 'column',
+          'name': '',
+          'columns': 2,
+          'children': [
+            {
+              'type': 'card',
+              'link': 'https://github.com/Antunees',
+              'name': 'Github',
+              'description': 'Code repository',
+              'icon':
+                  'https://lh3.googleusercontent.com/drive-viewer/AEYmBYTXgU6jbXaasGWWSsHHRxA4u02UKJewdBU61QdWjON3SF36xKJND68gzN_UIT-32BVnULHJAfL-9GxXI2qkz0pZUkHFLQ=s2560',
+            },
+            {
+              'type': 'card',
+              'link':
+                  'https://www.linkedin.com/in/cau%C3%AA-antunes-31437510a/',
+              'name': 'Linkedin',
+              'description': 'Professional profile',
+              'icon':
+                  'https://lh3.googleusercontent.com/drive-viewer/AEYmBYTf6lrYUWpjOYsAYzPSzDyqwHXLme6utcBqLXqVXvnEIBFOHXsTotugGXyvflJGuGYGlX0eR55lHdmL8NiQdMgHyOQ3bg=s2560',
+            },
+          ],
         },
         {
           'type': 'section',
           'name': 'Hobbies',
           'columns': 2,
-          'children': [],
-        }
+          'children': [
+            {
+              'type': 'card',
+              'link':
+                  'https://www.linkedin.com/in/cau%C3%AA-antunes-31437510a/',
+              'name': 'Linkedin',
+              'description': 'Professional profile',
+              'icon':
+                  'https://lh3.googleusercontent.com/drive-viewer/AEYmBYTf6lrYUWpjOYsAYzPSzDyqwHXLme6utcBqLXqVXvnEIBFOHXsTotugGXyvflJGuGYGlX0eR55lHdmL8NiQdMgHyOQ3bg=s2560',
+            },
+            {
+              'type': 'card',
+              'link':
+                  'https://www.linkedin.com/in/cau%C3%AA-antunes-31437510a/',
+              'name': 'Linkedin',
+              'description': 'Professional profile',
+              'icon':
+                  'https://lh3.googleusercontent.com/drive-viewer/AEYmBYTf6lrYUWpjOYsAYzPSzDyqwHXLme6utcBqLXqVXvnEIBFOHXsTotugGXyvflJGuGYGlX0eR55lHdmL8NiQdMgHyOQ3bg=s2560',
+            },
+          ],
+        },
+        {
+          'type': 'section',
+          'name': 'Hobbies Clone',
+          'columns': 3,
+          'children': [
+            {
+              'type': 'card',
+              'link':
+                  'https://www.linkedin.com/in/cau%C3%AA-antunes-31437510a/',
+              'name': 'Linkedin',
+              'description': 'Professional profile',
+              'icon':
+                  'https://lh3.googleusercontent.com/drive-viewer/AEYmBYTf6lrYUWpjOYsAYzPSzDyqwHXLme6utcBqLXqVXvnEIBFOHXsTotugGXyvflJGuGYGlX0eR55lHdmL8NiQdMgHyOQ3bg=s2560',
+            },
+            {
+              'type': 'card',
+              'link':
+                  'https://www.linkedin.com/in/cau%C3%AA-antunes-31437510a/',
+              'name': 'Linkedin',
+              'description': 'Professional profile',
+              'icon':
+                  'https://lh3.googleusercontent.com/drive-viewer/AEYmBYTf6lrYUWpjOYsAYzPSzDyqwHXLme6utcBqLXqVXvnEIBFOHXsTotugGXyvflJGuGYGlX0eR55lHdmL8NiQdMgHyOQ3bg=s2560',
+            },
+          ],
+        },
       ]
     };
     List<String> companiesIcons = data['companies'];
@@ -49,24 +101,37 @@ class StartPage extends StatelessWidget {
             ))
         .toList();
 
+    Children childrens = Children(data: data['children']);
+
     return Scaffold(
       backgroundColor: Colors.grey,
       body: SingleChildScrollView(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Column(
-              children: [
-                const SizedBox(
-                  height: 30.0,
-                ),
-                Row(children: companies),
-                const SizedBox(
-                  height: 30.0,
-                ),
-                Children(data: data['children']),
-              ],
-            ),
+            Expanded(
+              child: Column(
+                children: [
+                  Column(
+                    children: [
+                      const SizedBox(
+                        height: 30.0,
+                      ),
+                      Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: companies),
+                      const SizedBox(
+                        height: 30.0,
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: childrens.getWidgets(),
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),

@@ -45,12 +45,21 @@ class TypeSection extends StatelessWidget {
           children: [
             Text(
               data.name,
-              style: const TextStyle(fontSize: 25.0),
+              style: TextStyle(fontSize: 25.0),
             ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: columns,
+            Container(
+              // height: 50.0,
+              height: 500.0,
+              // height: 1000.0,
+              width: MediaQuery.of(context).size.width,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  children: columns,
+                ),
               ),
             )
           ],

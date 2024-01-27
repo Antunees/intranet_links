@@ -4,16 +4,18 @@ import 'package:intranet_links/models/model_section.dart';
 import 'package:intranet_links/types/type_card.dart';
 import 'package:intranet_links/types/type_section.dart';
 
-class Children {
-  final List<Map<String, dynamic>>? data;
-
-  Children({
+class Children extends StatelessWidget {
+  const Children({
+    super.key,
     required this.data,
   });
 
-  List<Widget> getWidgets() {
+  final List<Map<String, dynamic>>? data;
+
+  @override
+  Widget build(BuildContext context) {
     if (data == null || data!.isEmpty) {
-      return [Container()];
+      return Container();
     }
 
     List<Widget> widgets = [];
@@ -51,6 +53,8 @@ class Children {
       }
     }
 
-    return widgets;
+    return Column(
+      children: widgets,
+    );
   }
 }

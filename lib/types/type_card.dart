@@ -15,7 +15,7 @@ class TypeCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: SizedBox(
-        width: 500.0,
+        width: 400.0,
         child: Container(
             decoration: BoxDecoration(
                 color: Colors.grey.shade300,
@@ -42,9 +42,14 @@ class TypeCard extends StatelessWidget {
                       const SizedBox(
                         width: 8.0,
                       ),
-                      InkWell(
-                          child: Text(data.link),
-                          onTap: () => launchUrl(Uri.parse(data.link))),
+                      Flexible(
+                        child: InkWell(
+                            child: Text(
+                              data.link,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                            onTap: () => launchUrl(Uri.parse(data.link))),
+                      ),
                     ],
                   )
                 ],
