@@ -21,7 +21,6 @@ class StartPage extends StatelessWidget {
           'description': 'Code repository',
           'icon':
               'https://lh3.googleusercontent.com/drive-viewer/AEYmBYTXgU6jbXaasGWWSsHHRxA4u02UKJewdBU61QdWjON3SF36xKJND68gzN_UIT-32BVnULHJAfL-9GxXI2qkz0pZUkHFLQ=s2560',
-          'children': [],
         },
         {
           'type': 'card',
@@ -30,8 +29,13 @@ class StartPage extends StatelessWidget {
           'description': 'Professional profile',
           'icon':
               'https://lh3.googleusercontent.com/drive-viewer/AEYmBYTf6lrYUWpjOYsAYzPSzDyqwHXLme6utcBqLXqVXvnEIBFOHXsTotugGXyvflJGuGYGlX0eR55lHdmL8NiQdMgHyOQ3bg=s2560',
-          'children': [],
         },
+        {
+          'type': 'section',
+          'name': 'Hobbies',
+          'columns': 2,
+          'children': [],
+        }
       ]
     };
     List<String> companiesIcons = data['companies'];
@@ -47,11 +51,11 @@ class StartPage extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Colors.grey,
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            child: Column(
+      body: SingleChildScrollView(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Column(
               children: [
                 const SizedBox(
                   height: 30.0,
@@ -63,8 +67,8 @@ class StartPage extends StatelessWidget {
                 Children(data: data['children']),
               ],
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

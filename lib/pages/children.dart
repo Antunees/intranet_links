@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intranet_links/models/model_card.dart';
+import 'package:intranet_links/models/model_section.dart';
 import 'package:intranet_links/types/type_card.dart';
+import 'package:intranet_links/types/type_section.dart';
 
 class Children extends StatelessWidget {
   const Children({
@@ -26,6 +28,17 @@ class Children extends StatelessWidget {
           );
 
           widgets.add(TypeCard(data: object));
+          break;
+
+        case "section":
+          ModelSection object = ModelSection(
+            type: item['type'],
+            columns: item['columns'],
+            name: item['name'],
+            children: item['children'],
+          );
+
+          widgets.add(TypeSection(data: object));
           break;
 
         default:
