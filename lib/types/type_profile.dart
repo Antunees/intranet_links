@@ -13,54 +13,57 @@ class TypeProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      clipBehavior: Clip.hardEdge,
-      child: SizedBox(
-        width: 250,
-        height: 300,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                children: [
-                  const SizedBox(
-                    height: 20.0,
-                  ),
-                  profileImage(),
-                  const SizedBox(
-                    height: 12.0,
-                  ),
-                  Center(
-                    child: Text(
-                      data.name,
-                      style: TextStyle(fontSize: 16.0),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Card(
+        clipBehavior: Clip.hardEdge,
+        child: SizedBox(
+          width: 250,
+          height: 300,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  children: [
+                    const SizedBox(
+                      height: 20.0,
                     ),
-                  ),
-                  Text(
-                    data.description,
-                    style: TextStyle(color: Colors.grey.shade600),
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              color: Colors.grey.shade300,
-              child: SizedBox(
-                width: double.infinity,
-                child: Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        children: _linksAsIcon(),
+                    profileImage(),
+                    const SizedBox(
+                      height: 12.0,
+                    ),
+                    Center(
+                      child: Text(
+                        data.name,
+                        style: TextStyle(fontSize: 16.0),
                       ),
-                    )),
+                    ),
+                    Text(
+                      data.description,
+                      style: TextStyle(color: Colors.grey.shade600),
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ],
+                ),
               ),
-            )
-          ],
+              Container(
+                color: Colors.grey.shade300,
+                child: SizedBox(
+                  width: double.infinity,
+                  child: Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: _linksAsIcon(),
+                        ),
+                      )),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
