@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:intranet_links/models/model_card.dart';
+import 'package:intranet_links/models/model_column.dart';
 import 'package:intranet_links/models/model_section.dart';
 import 'package:intranet_links/types/type_card.dart';
+import 'package:intranet_links/types/type_column.dart';
 import 'package:intranet_links/types/type_section.dart';
 
 class Children {
@@ -43,6 +45,17 @@ class Children {
           );
 
           widgets.add(TypeSection(data: object));
+          break;
+
+        case "column":
+          ModelColumn object = ModelColumn(
+            columns: item['columns'],
+            children: item['children'].isEmpty
+                ? <Map<String, dynamic>>[]
+                : item['children'],
+          );
+
+          widgets.add(TypeColumn(data: object));
           break;
 
         default:

@@ -15,7 +15,7 @@ class TypeCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: SizedBox(
-        width: 400.0,
+        width: 500.0,
         child: Container(
             decoration: BoxDecoration(
                 color: Colors.grey.shade300,

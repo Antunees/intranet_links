@@ -16,8 +16,7 @@ class StartPage extends StatelessWidget {
       'children': [
         {
           'type': 'column',
-          'name': '',
-          'columns': 2,
+          'columns': 1,
           'children': [
             {
               'type': 'card',
