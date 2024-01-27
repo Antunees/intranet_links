@@ -6,6 +6,31 @@ class StartPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const List<Map<String, dynamic>> devPage = [
+      {
+        'type': 'column',
+        'columns': 1,
+        'children': [
+          {
+            'type': 'card',
+            'link': 'https://github.com/Antunees',
+            'name': 'Github',
+            'description': 'Code repository',
+            'icon':
+                'https://lh3.googleusercontent.com/drive-viewer/AEYmBYTXgU6jbXaasGWWSsHHRxA4u02UKJewdBU61QdWjON3SF36xKJND68gzN_UIT-32BVnULHJAfL-9GxXI2qkz0pZUkHFLQ=s2560',
+          },
+          {
+            'type': 'card',
+            'link': 'https://www.linkedin.com/in/cau%C3%AA-antunes-31437510a/',
+            'name': 'Linkedin',
+            'description': 'Professional profile',
+            'icon':
+                'https://lh3.googleusercontent.com/drive-viewer/AEYmBYTf6lrYUWpjOYsAYzPSzDyqwHXLme6utcBqLXqVXvnEIBFOHXsTotugGXyvflJGuGYGlX0eR55lHdmL8NiQdMgHyOQ3bg=s2560',
+          },
+        ],
+      },
+    ];
+    const List<Map<String, dynamic>> supPage = [];
     const Map<String, dynamic> data = {
       'companies': [
         // https://www.labnol.org/embed/google/drive/
@@ -39,33 +64,52 @@ class StartPage extends StatelessWidget {
         },
         {
           'type': 'section',
-          'name': 'Hobbies',
+          'name': 'Squads',
           'columns': 2,
           'children': [
             {
-              'type': 'card',
-              'link':
-                  'https://www.linkedin.com/in/cau%C3%AA-antunes-31437510a/',
-              'name': 'Linkedin',
-              'description': 'Professional profile',
-              'icon':
-                  'https://lh3.googleusercontent.com/drive-viewer/AEYmBYTf6lrYUWpjOYsAYzPSzDyqwHXLme6utcBqLXqVXvnEIBFOHXsTotugGXyvflJGuGYGlX0eR55lHdmL8NiQdMgHyOQ3bg=s2560',
+              'type': 'page',
+              'name': 'Dev',
+              'children': devPage,
             },
             {
-              'type': 'card',
-              'link':
-                  'https://www.linkedin.com/in/cau%C3%AA-antunes-31437510a/',
-              'name': 'Linkedin',
-              'description': 'Professional profile',
-              'icon':
-                  'https://lh3.googleusercontent.com/drive-viewer/AEYmBYTf6lrYUWpjOYsAYzPSzDyqwHXLme6utcBqLXqVXvnEIBFOHXsTotugGXyvflJGuGYGlX0eR55lHdmL8NiQdMgHyOQ3bg=s2560',
+              'type': 'page',
+              'name': 'Sup',
+              'children': supPage,
+            },
+          ],
+        },
+        // Here below is just for testing
+        {
+          'type': 'page',
+          'name': 'Dev',
+          'children': devPage,
+        },
+        {
+          'type': 'page',
+          'name': 'Sup',
+          'children': supPage,
+        },
+        {
+          'type': 'column',
+          'columns': 1,
+          'children': [
+            {
+              'type': 'page',
+              'name': 'Dev',
+              'children': devPage,
+            },
+            {
+              'type': 'page',
+              'name': 'Sup',
+              'children': supPage,
             },
           ],
         },
         {
           'type': 'section',
-          'name': 'Hobbies Clone',
-          'columns': 3,
+          'name': 'Hobbies',
+          'columns': 2,
           'children': [
             {
               'type': 'card',
