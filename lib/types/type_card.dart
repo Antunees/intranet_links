@@ -14,12 +14,14 @@ class TypeCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: SizedBox(
-        width: 500.0,
-        child: Container(
-            decoration: BoxDecoration(
-                color: Colors.grey.shade300,
-                borderRadius: const BorderRadius.all(Radius.circular(10.0))),
+      child: Card(
+        clipBehavior: Clip.hardEdge,
+        child: InkWell(
+          onTap: () {
+            launchUrl(Uri.parse(data.link));
+          },
+          child: SizedBox(
+            width: 500.0,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
@@ -43,18 +45,18 @@ class TypeCard extends StatelessWidget {
                         width: 8.0,
                       ),
                       Flexible(
-                        child: InkWell(
-                            child: Text(
-                              data.link,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                            onTap: () => launchUrl(Uri.parse(data.link))),
+                        child: Text(
+                          data.link,
+                          overflow: TextOverflow.ellipsis,
+                        ),
                       ),
                     ],
                   )
                 ],
               ),
-            )),
+            ),
+          ),
+        ),
       ),
     );
   }
